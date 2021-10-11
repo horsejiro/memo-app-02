@@ -10,10 +10,6 @@ export class TodoListModel extends EventEmitter {
         return this.items.length;
     }
 
-    getTotalCount() {
-        return this.items.length;
-    }
-
     getTodoItems() {
         return this.items;
     }

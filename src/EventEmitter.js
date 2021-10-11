@@ -1,19 +1,19 @@
 export class EventEmitter {
     constructor() {
-        this._listners = new Map();
+        this._listeners = new Map();
     }
 
     addEventListener(type, listener) {
-        if (!this._listners.has(type)) {
-            this._listners.set(type, new Set());
+        if (!this._listeners.has(type)) {
+            this._listeners.set(type, new Set());
         }
 
-        const listenerSet = this._listners.get(type);
+        const listenerSet = this._listeners.get(type);
         listenerSet.add(listener);
     }
 
     emit(type) {
-        const listenerSet = this._listners.get(type);
+        const listenerSet = this._listeners.get(type);
         if (!listenerSet) {
             return;
         }
@@ -24,7 +24,7 @@ export class EventEmitter {
     }
 
     removeEventListener(type, listener) {
-        const listenerSet = this._listners.get(type);
+        const listenerSet = this._listeners.get(type);
         if (!listenerSet) {
             return;
         }
