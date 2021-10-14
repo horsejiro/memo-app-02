@@ -20,6 +20,10 @@ export class App {
     handleDelete({ id }) {
         this.todoListModel.deleteTodo({ id });
     }
+
+    unmount() {
+        
+    }
     mount() {
         const formElement = document.querySelector("#js-form");
         const inputElement = document.querySelector("#js-form-input");
